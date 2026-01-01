@@ -1,0 +1,13 @@
+name: ML Deployment Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
