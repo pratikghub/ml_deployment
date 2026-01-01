@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 jobs:
-  test-run:
+  train-model:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,3 +18,6 @@ jobs:
       - name: Install R packages
         run: |
           Rscript -e "install.packages('tidyverse', repos='https://cloud.r-project.org')"
+
+      - name: Train ML model
+        run: Rscript train.R
