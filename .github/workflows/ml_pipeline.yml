@@ -43,3 +43,12 @@ jobs:
 
       - name: Run inference
         run: Rscript predict.R
+        
+      - name: Commit predictions
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add predictions/
+          git commit -m "Add predictions and metrics [CI]" || echo "No changes to commit"
+          git push
+
