@@ -9,6 +9,9 @@ on:
       - "predict.R"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   run-inference:
     runs-on: ubuntu-latest
