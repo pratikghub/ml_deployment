@@ -56,10 +56,16 @@ jobs:
         run: Rscript monitor.R
 
       # 7️⃣ Commit predictions & monitoring artifacts
-      - name: Commit prediction & monitoring outputs
+      - name: Commit predictions and monitoring outputs
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
+      
           git add predictions/
           git commit -m "Update predictions and monitoring reports [CI]" || echo "No changes to commit"
-          git push
+      
+          # 🔥 Sync with remote before pushing
+          git pull --rebase origin main
+      
+          git push origin main
+
