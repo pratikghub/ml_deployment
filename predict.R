@@ -2,10 +2,10 @@
 # -------------------------------
 # Safe package loading
 # -------------------------------
-if (!require("tidyverse", quietly = TRUE)) {
-  install.packages("tidyverse", repos = "https://cloud.r-project.org")
-  library(tidyverse)
-}
+#if (!require("tidyverse", quietly = TRUE)) {
+#  install.packages("tidyverse", repos = "https://cloud.r-project.org")
+library(tidyverse)
+#}
 
 # 1️⃣ Load trained model
 model <- readRDS("model/linear_model.rds")
