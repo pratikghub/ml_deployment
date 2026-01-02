@@ -21,7 +21,7 @@ jobs:
 
       - name: Install R packages
         run: |
-          Rscript -e "install.packages('tidyverse', repos='https://cloud.r-project.org')"
+          Rscript -e "install.packages(c('tidyverse', 'readr', 'dplyr'), repos='https://cloud.r-project.org')"
 
       - name: Run inference
         run: Rscript predict.R
