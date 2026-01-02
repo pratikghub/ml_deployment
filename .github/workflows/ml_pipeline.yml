@@ -3,6 +3,10 @@ name: ML Deployment Pipeline
 on:
   push:
     branches: [ main ]
+    paths:
+      #- "predict.R"
+      - "new_data/**"
+      #- "model/**"
 
 jobs:
   train-model:
@@ -19,5 +23,5 @@ jobs:
         run: |
           Rscript -e "install.packages('tidyverse', repos='https://cloud.r-project.org')"
 
-      - name: Train ML model
-        run: Rscript train.R
+      #- name: Inference ML model
+        #run: Rscript train.R
